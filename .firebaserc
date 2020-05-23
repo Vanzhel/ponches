@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ponchesbrena-40dea": {
+      "hosting": {
+        "PonchesBrena": [
+          "ponchesbrena-40dea"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ponchesbrena-40dea"
+  }
+}

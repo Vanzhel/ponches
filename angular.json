@@ -117,8 +117,16 @@
               "devServerTarget": "PonchesBrena:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "PonchesBrena"
+    }
+  },
+  "defaultProject": "PonchesBrena",
+  "cli": {
+    "analytics": false
+  }
 }

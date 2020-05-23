@@ -1,0 +1,57 @@
+<div class="alert alert-primary" role="alert" *ngFor="let item of items" >
+    <div class="card-body">
+        <h5 class="card-title">Nombre</h5>
+        <p class="card-text">{{item.Nombre}}</p>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Descripcion</h5>
+        <p class="card-text">{{item.Descripcion}}</p>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Precio</h5>
+        <p class="card-text">{{item.Precio}}</p>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Fecha de Vencimiento</h5>
+        <p class="card-text">{{item.FechaVenc}}</p>
+    </div>
+    <div>
+          <a href="#" class="btn btn-primary float-right" >
+              <i class="fa fa-trash float-right text-danger" style="cursor:pointer;" (click)="eliminar(item.id)"></i>
+              <i class="fa fa-pencil float-right mr-3" style="cursor:pointer;" (click)="editar(item)" data-toggle="modal" data-target="#modelId"></i>        
+          </a>
+    </div>   
+  </div>
+ 
+ 
+ <!-- Aqui esta el editor -->
+ <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <h5 class="modal-title">Edita Cambios</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                     </button>
+             </div>
+             <form (ngSubmit)="editarForm()">
+                <div class="modal-body">
+                    <div class="form-group">
+                    <label for="">Nombre</label>
+                    <input type="text" class="form-control" name="Nombre" [(ngModel)]="itemEditar.Nombre">
+                    <label for="">Descripcion</label>
+                    <input type="text" class="form-control" name="Descripcion" [(ngModel)]="itemEditar.Descripcion">
+                    <label for="">Precio</label>
+                    <input type="number" class="form-control" name="Precio" [(ngModel)]="itemEditar.Precio">
+                    <label for="">Fecha de Vencimiento</label>
+                    <input type="date" class="form-control" name="FechaVenc" [(ngModel)]="itemEditar.FechaVenc">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+             </form>   
+         </div>
+     </div>
+ </div>

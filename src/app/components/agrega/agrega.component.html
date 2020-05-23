@@ -1,0 +1,15 @@
+<form (ngSubmit)='agregar()'>
+    <div class="form-group">
+        <label for="">Nombre</label>
+        <input type="text" class="form-control" name="Nombre" [(ngModel)]="item.Nombre">
+        <label for="">Descripcion</label>
+        <input type="text" class="form-control" name="Descripcion" [(ngModel)]="item.Descripcion">
+        <label for="">Precio</label>
+        <input type="number" class="form-control" name="Precio" [(ngModel)]="item.Precio">
+        <label for="">Fecha de Vencimiento</label>
+        <input type="date" class="form-control" name="FechaVenc" [(ngModel)]="item.FechaVenc">
+        <br>
+        <button type="submit" class="btn btn-primary">Agregar</button>
+      </div>
+</form>
+
